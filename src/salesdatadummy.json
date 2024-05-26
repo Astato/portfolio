@@ -1,0 +1,75 @@
+[
+  {
+    "period": "2",
+    "id": 12,
+    "amount": 280,
+    "category": "Skin Care",
+    "age_group": "All",
+    "gender": "N/A"
+  },
+  {
+    "period": "3",
+    "amount": 210,
+    "id": 12,
+    "category": "Skin Care",
+    "age_group": "All",
+    "gender": "N/A"
+  },
+  {
+    "period": "3",
+    "amount": 40,
+    "id": 12,
+    "category": "Skin Care",
+    "age_group": "All",
+    "gender": "N/A"
+  },
+
+  {
+    "period": "2",
+    "id": 15,
+    "amount": 20,
+    "category": "Beverages",
+    "age_group": "All",
+    "gender": "N/A"
+  },
+  {
+    "period": "1",
+    "amount": 280,
+    "id": 15,
+    "category": "Beverages",
+    "age_group": "All",
+    "gender": "Female"
+  },
+  {
+    "period": "1",
+    "id": 15,
+    "amount": 280,
+    "category": "Beverages",
+    "age_group": "All",
+    "gender": "N/A"
+  },
+  {
+    "period": "1",
+    "amount": 280,
+    "id": 16,
+    "category": "Frozen",
+    "age_group": "All",
+    "gender": "Female"
+  },
+  {
+    "period": "1",
+    "amount": 280,
+    "id": 16,
+    "category": "Frozen",
+    "age_group": "All",
+    "gender": "Female"
+  },
+  {
+    "period": "1",
+    "amount": 280,
+    "id": 16,
+    "category": "Frozen",
+    "age_group": "All",
+    "gender": "Male"
+  }
+]

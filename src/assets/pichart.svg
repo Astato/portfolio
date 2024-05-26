@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="56mm"
+   height="56mm"
+   viewBox="0 0 56 56"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="pichart.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="true"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showguides="true"
+     inkscape:lockguides="false"
+     inkscape:zoom="1.7512897"
+     inkscape:cx="249.53039"
+     inkscape:cy="160.45318"
+     inkscape:window-width="1920"
+     inkscape:window-height="1028"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     labelstyle="default">
+    <sodipodi:guide
+       position="87.740406,-45.338624"
+       orientation="1,0"
+       id="guide1"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="87.472748,-45.440164"
+       orientation="0,-1"
+       id="guide2"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g3"
+       transform="rotate(-89.979818,21.169162,94.718116)">
+      <path
+         id="path1"
+         d="M 87.709375,101.33542 H 60.379777 a 27.3675,27.3675 0 0 0 -0.0067,0.1018 27.3675,27.3675 0 0 0 27.336316,27.36525 z" />
+      <path
+         id="path3"
+         d="M 87.709375,74.071965 A 27.3675,27.3675 0 0 0 60.379777,101.33542 h 27.329598 z" />
+      <path
+         id="path2"
+         d="m 87.709375,74.071965 v 54.730505 a 27.3675,27.3675 0 0 0 0.03152,0.002 27.3675,27.3675 0 0 0 27.367325,-27.36732 27.3675,27.3675 0 0 0 -27.367325,-27.367323 27.3675,27.3675 0 0 0 -0.03152,0.0021 z" />
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,602 @@
+[
+  {
+    "typeof": "Expense",
+    "amount": -510,
+    "date": "2023-04-26",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -772,
+    "date": "2024-02-14",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 764,
+    "date": "2023-03-28",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 913,
+    "date": "2024-04-20",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1859,
+    "date": "2024-03-19",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1855,
+    "date": "2023-04-30",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -538,
+    "date": "2023-04-11",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -1306,
+    "date": "2023-04-08",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 917,
+    "date": "2024-04-04",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1942,
+    "date": "2024-02-16",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 598,
+    "date": "2023-02-27",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -1336,
+    "date": "2024-04-12",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1826,
+    "date": "2023-03-18",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -1502,
+    "date": "2023-04-13",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -854,
+    "date": "2023-03-29",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1475,
+    "date": "2023-03-30",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -1318,
+    "date": "2023-04-11",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1705,
+    "date": "2024-03-10",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1140,
+    "date": "2024-04-17",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -527,
+    "date": "2024-04-18",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 970,
+    "date": "2023-04-30",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1217,
+    "date": "2023-02-27",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 762,
+    "date": "2024-03-13",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -1139,
+    "date": "2024-03-03",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 888,
+    "date": "2024-04-28",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1522,
+    "date": "2023-02-15",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1782,
+    "date": "2023-03-18",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -1518,
+    "date": "2024-03-25",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -1935,
+    "date": "2023-02-04",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -1678,
+    "date": "2023-04-22",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1582,
+    "date": "2024-03-01",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -1854,
+    "date": "2024-03-30",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1567,
+    "date": "2024-02-30",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1396,
+    "date": "2024-03-30",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -1285,
+    "date": "2024-04-24",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1145,
+    "date": "2023-02-16",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1036,
+    "date": "2024-02-14",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -541,
+    "date": "2023-02-24",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1886,
+    "date": "2024-04-18",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1984,
+    "date": "2023-03-12",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -1288,
+    "date": "2024-02-19",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1018,
+    "date": "2023-04-24",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -1835,
+    "date": "2023-04-27",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -668,
+    "date": "2024-03-12",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -1105,
+    "date": "2024-04-04",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -794,
+    "date": "2024-02-06",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 848,
+    "date": "2023-02-11",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -1050,
+    "date": "2023-04-22",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -1396,
+    "date": "2024-04-28",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1444,
+    "date": "2023-02-09",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 999,
+    "date": "2024-02-08",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1629,
+    "date": "2024-02-03",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -1373,
+    "date": "2023-04-29",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -1669,
+    "date": "2023-02-18",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -1163,
+    "date": "2023-02-15",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 603,
+    "date": "2023-02-13",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1123,
+    "date": "2024-03-04",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -1499,
+    "date": "2023-03-22",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1241,
+    "date": "2023-04-03",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1389,
+    "date": "2024-03-17",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1490,
+    "date": "2023-03-21",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1948,
+    "date": "2024-03-28",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 674,
+    "date": "2024-02-09",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -1807,
+    "date": "2024-02-23",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -813,
+    "date": "2024-04-12",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1043,
+    "date": "2024-04-27",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 618,
+    "date": "2023-03-11",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 977,
+    "date": "2024-04-04",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -870,
+    "date": "2023-03-17",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -612,
+    "date": "2023-04-01",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -1164,
+    "date": "2024-03-05",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -923,
+    "date": "2023-04-30",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -1481,
+    "date": "2024-03-07",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -1070,
+    "date": "2024-03-29",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -1306,
+    "date": "2024-02-15",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1763,
+    "date": "2024-04-01",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -1018,
+    "date": "2023-02-17",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1323,
+    "date": "2023-04-02",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -618,
+    "date": "2023-03-10",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -528,
+    "date": "2024-03-10",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1320,
+    "date": "2023-02-19",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1059,
+    "date": "2024-02-30",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -1806,
+    "date": "2024-03-01",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1643,
+    "date": "2024-04-21",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -1125,
+    "date": "2024-02-15",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 923,
+    "date": "2024-02-14",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 581,
+    "date": "2023-03-07",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1382,
+    "date": "2024-02-12",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 704,
+    "date": "2023-03-02",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1285,
+    "date": "2024-04-12",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -545,
+    "date": "2024-03-07",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1106,
+    "date": "2024-04-19",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -1880,
+    "date": "2023-04-09",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -1168,
+    "date": "2023-03-22",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -774,
+    "date": "2024-03-16",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -633,
+    "date": "2024-02-21",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -892,
+    "date": "2023-02-19",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": -999,
+    "date": "2023-04-13",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1631,
+    "date": "2023-04-19",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1341,
+    "date": "2023-04-06",
+    "description": ""
+  }
+]

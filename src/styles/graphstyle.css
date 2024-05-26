@@ -1,0 +1,75 @@
+@charset "UTF-8";
+:root {
+  --icon-color: "0";
+  --filter: unitless(var(--icon-color));
+}
+
+.filter-tooltiṕ {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+
+.MuiPickersToolbar-root.MuiDatePickerToolbar-root.MuiPickersLayout-toolbar.css-1eurbeq-MuiPickersToolbar-root-MuiDatePickerToolbar-root > div > h4 {
+  margin: 0;
+  font-size: 27px;
+}
+
+.MuiPickersCalendarHeader-root.css-1aqny2q-MuiPickersCalendarHeader-root {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  max-width: 250px;
+}
+.MuiPickersCalendarHeader-root.css-1aqny2q-MuiPickersCalendarHeader-root button {
+  margin: 0;
+}
+.MuiPickersCalendarHeader-root.css-1aqny2q-MuiPickersCalendarHeader-root .MuiPickersCalendarHeader-labelContainer.css-cyfsxc-MuiPickersCalendarHeader-labelContainer > div {
+  width: 180px;
+}
+.MuiPickersCalendarHeader-root.css-1aqny2q-MuiPickersCalendarHeader-root .MuiPickersCalendarHeader-labelContainer.css-cyfsxc-MuiPickersCalendarHeader-labelContainer > div div {
+  width: 100%;
+}
+.MuiPickersCalendarHeader-root.css-1aqny2q-MuiPickersCalendarHeader-root #\:r4l\:-grid-label {
+  max-width: 10px;
+}
+.MuiPickersCalendarHeader-root.css-1aqny2q-MuiPickersCalendarHeader-root .MuiPickersArrowSwitcher-root.css-9reuh9-MuiPickersArrowSwitcher-root {
+  max-width: 100px;
+}
+.MuiPickersCalendarHeader-root.css-1aqny2q-MuiPickersCalendarHeader-root .MuiPickersArrowSwitcher-root.css-9reuh9-MuiPickersArrowSwitcher-root {
+  width: 50px;
+  margin: auto 40px auto -40px;
+}
+
+.MuiPickersCalendarHeader-label.css-dplwbx-MuiPickersCalendarHeader-label {
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+body > div.MuiDialog-root.MuiModal-root.css-3dah0e-MuiModal-root-MuiDialog-root > div.MuiDialog-container.MuiDialog-scrollPaper.css-hz1bth-MuiDialog-container > div > div > div > div.MuiDialogActions-root.MuiDialogActions-spacing.MuiPickersLayout-actionBar.css-knqc4i-MuiDialogActions-root {
+  padding: 0;
+  margin-top: -1rem;
+}
+
+input[type=number] {
+  height: 50px;
+}
+
+input[type=date] {
+  width: 150px;
+  margin: 0 10px;
+  height: 50px;
+}
+input[type=date]::-webkit-calendar-picker-indicator {
+  color: white;
+  fill: white;
+  filter: invert(var(--icon-color));
+}
+
+input[type=text] {
+  height: 50px;
+}
+
+div:nth-child(1) > div:nth-child(2) > div:nth-child(2):hover {
+  border-right-width: 10px;
+}/*# sourceMappingURL=graphstyle.css.map */

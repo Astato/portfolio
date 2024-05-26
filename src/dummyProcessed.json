@@ -1,0 +1,146 @@
+[
+  {
+    "typeof": "Expense",
+    "amount": 1710,
+    "date": "2024-04-01",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 390,
+    "date": "2024-04-02",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": 472,
+    "date": "2024-04-03",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": 1943,
+    "date": "2024-04-04",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": 1280,
+    "date": "2024-04-07",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": 909,
+    "date": "2024-04-08",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 609,
+    "date": "2024-04-09",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 588,
+    "date": "2024-04-10",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 296,
+    "date": "2024-04-12",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 41,
+    "date": "2024-04-13",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 2608,
+    "date": "2024-04-14",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": 2230,
+    "date": "2024-04-15",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 98,
+    "date": "2024-04-16",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": 2240,
+    "date": "2024-04-17",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": 658,
+    "date": "2024-04-18",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 972,
+    "date": "2024-04-20",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 2843,
+    "date": "2024-04-23",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 1582,
+    "date": "2024-04-24",
+    "description": ""
+  },
+  {
+    "typeof": "Income",
+    "amount": 299,
+    "date": "2024-04-25",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": 606,
+    "date": "2024-04-26",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": 741,
+    "date": "2024-04-27",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": 1192,
+    "date": "2024-04-28",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": 1163,
+    "date": "2024-04-29",
+    "description": ""
+  },
+  {
+    "typeof": "Expense",
+    "amount": 2870,
+    "date": "2024-04-30",
+    "description": ""
+  }
+]
