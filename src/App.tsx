@@ -40,7 +40,7 @@ function App() {
     const lat = sessionStorage.getItem("latitude");
     const lon = sessionStorage.getItem("longitude");
     if (!weatherData) {
-      if (lat !== null && lon !== null) {
+      if (lat && lon) {
         getWeather(Number(lat), Number(lon));
       } else {
         navigator.geolocation.getCurrentPosition(
@@ -51,7 +51,7 @@ function App() {
     }
     setInfoMessage(true);
     sessionStorage.setItem("infoMessage", "showed");
-  }, []);
+  }, [weatherData]);
 
   return (
     <Grid

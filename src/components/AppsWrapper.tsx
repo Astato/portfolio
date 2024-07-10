@@ -67,16 +67,6 @@ const AppsWrapper: React.FC<Props> = ({
   useEffect(() => {
     setTimeout(() => {
       setButtonClass("hide");
-      if (socially) {
-        const googlesignin = document.querySelector(
-          "iframe > #login-container > a > button"
-        );
-        console.log(
-          googlesignin,
-          "HERE",
-          document.getElementById("login-container")
-        );
-      }
     }, 2000);
   }, []);
 
@@ -92,6 +82,7 @@ const AppsWrapper: React.FC<Props> = ({
         const { latitude, longitude, weather } = e.data;
         sessionStorage.setItem("latitude", latitude);
         sessionStorage.setItem("longitude", longitude);
+        console.log(weather, "WEATHER RETRIEVED");
         if (setWeatherData) {
           setWeatherData(weather);
           return;
