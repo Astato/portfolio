@@ -1,3 +1,4 @@
+/// <reference types="vite-plugin-svgr/client" />
 import { Grid } from "@mui/material";
 import React, {
   ReactElement,
@@ -8,19 +9,18 @@ import React, {
   useState,
 } from "react";
 import { DarkModeContext } from "./Wrapper";
-import photosIcon from "../assets/icons/Google_Photos_icon.svg";
-import calculatorIcon from "../assets/icons/calc-icon.webp";
-import calendarIcon from "../assets/icons/Google_Calendar_icon.svg.png";
-import dynagraphIcon from "../assets/icons/icon-dynagraph-2.png";
-import sociallyIcon from "../assets/icons/socially.png";
-import storeIcon from "../assets/icons/storeIcon4.png";
-import messageIcon from "../assets/icons/Google_Messages_logo.png";
-import blogIcon from "../assets/icons/disclogo.png";
-import githubIcon from "../assets/icons/github-mark-white.png";
-import weatherIcon from "../assets/icons/weatherIcon.png";
+import photosIcon from "/assets/icons/Google_Photos_icon.svg";
+import calculatorIcon from "/assets/icons/calc-icon.webp";
+import calendarIcon from "/assets/icons/Google_Calendar_icon.svg.png";
+import dynagraphIcon from "/assets/icons/icon-dynagraph-2.png";
+import sociallyIcon from "/assets/icons/socially.png";
+import storeIcon from "/assets/icons/storeIcon4.png";
+import messageIcon from "/assets/icons/Google_Messages_logo.png";
+import blogIcon from "/assets/icons/disclogo.png";
+import githubIcon from "/assets/icons/github-mark-white.png";
+import weatherIcon from "/assets/icons/weatherIcon.png";
 import { f7 } from "framework7-react";
 import { Settings } from "@mui/icons-material";
-////falta touch end and touch start or touchmove for device compatibility ////////////
 
 interface IconProps {
   name: string;

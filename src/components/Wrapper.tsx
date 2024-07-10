@@ -8,7 +8,7 @@ import "framework7/css/bundle";
 import Settings from "./Settings";
 import NotificationBar from "./NotificationBar";
 import AppDrawer from "./AppDrawer";
-import defaultWallpaper from "../assets/pexels-brady-knoll-5409751.jpg";
+import defaultWallpaper from "/assets/pexels-brady-knoll-5409751.jpg";
 import HubMode from "./HubMode";
 import AppsWrapper from "./AppsWrapper";
 import { extractColors } from "extract-colors";

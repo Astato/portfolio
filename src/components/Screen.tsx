@@ -1,3 +1,5 @@
+/// <reference types="vite-plugin-svgr/client" />
+
 import { Grid, useTheme } from "@mui/material";
 import React, {
   useEffect,
@@ -21,11 +23,11 @@ import DragDropContainer from "./DragDropContainer";
 import { DragLayer } from "./DragLayer";
 import { Page, Button, f7 } from "framework7-react";
 import { DarkModeContext } from "./Wrapper";
-import photosIcon from "../assets/icons/Google_Photos_icon.svg";
-import calculatorIcon from "../assets/icons/calc-icon.webp";
-import copilotIcon from "../assets/icons/Microsoft_Copilot_Icon.svg.png";
-import dynagraphIcon from "../assets/icons/icon-dynagraph-2.png";
-import calendarIcon from "../assets/icons/Google_Calendar_icon.svg.png";
+import photosIcon from "/assets/icons/Google_Photos_icon.svg";
+import calculatorIcon from "/assets/icons/calc-icon.webp";
+import copilotIcon from "/assets/icons/Microsoft_Copilot_Icon.svg.png";
+import dynagraphIcon from "/assets/icons/icon-dynagraph-2.png";
+import calendarIcon from "/assets/icons/Google_Calendar_icon.svg.png";
 import { Settings } from "@mui/icons-material";
 import weatherIcons from "../utils/weatherIcons";
 // import * from "../assets/icons/weather/light"

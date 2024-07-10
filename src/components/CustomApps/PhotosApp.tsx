@@ -1,22 +1,13 @@
 import { useTheme } from "@emotion/react";
 import { Grid } from "@mui/material";
-import {
-  Toolbar,
-  Tab,
-  Link,
-  Tabs,
-  Page,
-  PhotoBrowser,
-  useStore,
-} from "framework7-react";
+import { Toolbar, Tab, Link, Tabs, Page } from "framework7-react";
 import React, { ReactNode, SetStateAction, useEffect, useState } from "react";
 import Resizer from "react-image-file-resizer";
-import wallpaper1 from "../../assets/pexels-brady-knoll-5409751.jpg";
-import wallpaper2 from "../../assets/pexels-eberhard-grossgasteiger-572897.jpg";
-import wallpaper3 from "../../assets/pexels-frans-van-heerden-624015.jpg";
-import wallpaper4 from "../../assets/pexels-jacub-gomez-1142950.jpg";
-import wallpaper5 from "../../assets/pexels-jeremy-bishop-2922672.jpg";
-import wallpaper6 from "../../assets/pexels-walid-ahmad-1509582.jpg";
+import wallpaper1 from "/assets/pexels-brady-knoll-5409751.jpg";
+import wallpaper2 from "/assets/pexels-eberhard-grossgasteiger-572897.jpg";
+import wallpaper3 from "/assets/pexels-frans-van-heerden-624015.jpg";
+import wallpaper4 from "/assets/pexels-jacub-gomez-1142950.jpg";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import "react-clock/dist/Clock.css";
 import "swiper/css";

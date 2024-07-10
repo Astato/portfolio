@@ -2,8 +2,8 @@ import { Grid, useTheme } from "@mui/material";
 import { Check } from "@mui/icons-material";
 import React, { useContext, useEffect, useState } from "react";
 import { DarkModeContext } from "./Wrapper";
-import darkFlipper from "../assets/flipper-dark.png";
-import lightFlipper from "../assets/flipper-light.png";
+import darkFlipper from "/assets/flipper-dark.png";
+import lightFlipper from "/assets/flipper-light.png";
 import HubDigitalClock from "./HubDigitalClock";
 
 interface HubModeItemProps {

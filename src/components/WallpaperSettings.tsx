@@ -10,12 +10,12 @@ import React, {
   useState,
   SetStateAction,
 } from "react";
-import wallpaper1 from "../assets/pexels-brady-knoll-5409751.jpg";
-import wallpaper2 from "../assets/pexels-eberhard-grossgasteiger-572897.jpg";
-import wallpaper3 from "../assets/pexels-frans-van-heerden-624015.jpg";
-import wallpaper4 from "../assets/pexels-jacub-gomez-1142950.jpg";
-import wallpaper5 from "../assets/pexels-jeremy-bishop-2922672.jpg";
-import wallpaper6 from "../assets/pexels-walid-ahmad-1509582.jpg";
+import wallpaper1 from "/assets/pexels-brady-knoll-5409751.jpg";
+import wallpaper2 from "/assets/pexels-eberhard-grossgasteiger-572897.jpg";
+import wallpaper3 from "/assets/pexels-frans-van-heerden-624015.jpg";
+import wallpaper4 from "/assets/pexels-jacub-gomez-1142950.jpg";
+import wallpaper5 from "/assets/pexels-jeremy-bishop-2922672.jpg";
+import wallpaper6 from "/assets/pexels-walid-ahmad-1509582.jpg";
 import { DarkModeContext } from "./Wrapper";
 import { SettingsProps } from "./Settings";
 import HubDigitalClock from "./HubDigitalClock";
