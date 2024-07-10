@@ -12,9 +12,6 @@ function App() {
     Boolean(sessionStorage.getItem("infoMessage"))
   );
   const [weatherData, setWeatherData] = useState("");
-  const [weatherLocation, setWeatherLocation] = useState<[number, number]>([
-    0, 0,
-  ]);
 
   async function getWeather(latitude: number, longitude: number) {
     if (latitude && longitude) {
@@ -24,7 +21,8 @@ function App() {
         );
         if (response.status === 200) {
           const data = await response.json();
-          setWeatherLocation([latitude, longitude]);
+          sessionStorage.setItem("longitude", longitude.toString());
+          sessionStorage.setItem("latitude", latitude.toString());
           return setWeatherData(data);
         }
       } catch (error) {
@@ -39,9 +37,7 @@ function App() {
   useEffect(() => {
     const lat = sessionStorage.getItem("latitude");
     const lon = sessionStorage.getItem("longitude");
-    if (lat && lon) {
-      setWeatherLocation([Number(lat), Number(lon)]);
-    }
+
     if (!weatherData) {
       if (lat && lon) {
         getWeather(Number(lat), Number(lon));
@@ -71,12 +67,7 @@ function App() {
           dealyTouchStart: 500,
         }}
       >
-        <Wrapper
-          weatherData={weatherData}
-          weatherLocation={weatherLocation}
-          setWeatherData={setWeatherData}
-          setWeatherLocation={setWeatherLocation}
-        />
+        <Wrapper weatherData={weatherData} setWeatherData={setWeatherData} />
       </DndProvider>
       <div
         style={{

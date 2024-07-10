@@ -322,6 +322,8 @@ const WeatherComponent: React.FC<DraggableProps> = ({ onClick }) => {
   const darkColor = theme.palette.primary.dark;
   let temperature = "";
 
+  useEffect(() => {}, [weatherData, tempUnit]);
+
   const icon = weatherData.dt && weatherData.weather[0].icon;
   if (weatherData.dt) {
     weatherData.sys.country === "US" || tempUnit === "°F"
@@ -331,6 +333,7 @@ const WeatherComponent: React.FC<DraggableProps> = ({ onClick }) => {
         ).toFixed())
       : (temperature = (weatherData.main.feels_like - 273.15).toFixed());
   }
+
   return (
     <div
       onClick={() => {

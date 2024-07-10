@@ -35,7 +35,6 @@ interface DarkModeContextType {
   brightness: number;
   weatherData: any;
   openedApp: boolean;
-  weatherLocation: [number, number];
   colorPalette: ColorPalette;
   tempUnit: string;
   setTempUnit: React.Dispatch<React.SetStateAction<string>>;
@@ -52,7 +51,6 @@ interface DarkModeContextType {
   setNightLight: React.Dispatch<React.SetStateAction<boolean>>;
   setColorPalette: React.Dispatch<React.SetStateAction<ColorPalette>>;
   setWeatherData: React.Dispatch<React.SetStateAction<any>>;
-  setWeatherLocation: React.Dispatch<React.SetStateAction<[number, number]>>;
 }
 
 export const DarkModeContext = createContext<DarkModeContextType | undefined>(
@@ -61,8 +59,6 @@ export const DarkModeContext = createContext<DarkModeContextType | undefined>(
 
 interface WrapperProps {
   weatherData: any;
-  weatherLocation: [number, number];
-  setWeatherLocation: React.Dispatch<React.SetStateAction<[number, number]>>;
   setWeatherData: React.Dispatch<React.SetStateAction<any>>;
 }
 
@@ -82,12 +78,7 @@ async function extractWallpaperColors(src: ImageData) {
   }
 }
 
-const Wrapper: React.FC<WrapperProps> = ({
-  weatherData,
-  weatherLocation,
-  setWeatherData,
-  setWeatherLocation,
-}) => {
+const Wrapper: React.FC<WrapperProps> = ({ weatherData, setWeatherData }) => {
   const [colorPalette, setColorPalette] = useState<ColorPalette>({
     disabled: "#1e1d1f",
     nightmode: "false",
@@ -282,8 +273,6 @@ const Wrapper: React.FC<WrapperProps> = ({
         setOpenedApp,
         setColorPalette,
         colorPalette,
-        weatherLocation,
-        setWeatherLocation,
         setWeatherData,
         tempUnit,
         setTempUnit,

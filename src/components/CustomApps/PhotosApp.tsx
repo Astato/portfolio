@@ -1,3 +1,4 @@
+/// <reference types="vite-plugin-svgr/client" />
 import { useTheme } from "@emotion/react";
 import { Grid } from "@mui/material";
 import { Toolbar, Tab, Link, Tabs, Page } from "framework7-react";

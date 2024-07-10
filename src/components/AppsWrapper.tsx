@@ -52,14 +52,12 @@ const AppsWrapper: React.FC<Props> = ({
   const setOpenedApp = appContext?.setOpenedApp;
   const backgroundColor = theme.palette.background.default;
   const mainColor = theme.palette.primary.main;
-  const weatherLocation = appContext?.weatherLocation;
   const setWeatherData = appContext?.setWeatherData;
-  const setWeatherLocation = appContext?.setWeatherLocation;
   const setTempUnit = appContext?.setTempUnit;
   const [buttonClass, setButtonClass] = useState<string>("show");
 
-  const savedLatitude = weatherLocation && weatherLocation[0];
-  const savedLongitude = weatherLocation && weatherLocation[1];
+  const savedLatitude = sessionStorage.getItem("latitude");
+  const savedLongitude = sessionStorage.getItem("longitude");
 
   useEffect(() => {
     if (!open) setOpen(true);
@@ -73,24 +71,21 @@ const AppsWrapper: React.FC<Props> = ({
 
   useEffect(() => {
     const getPostMessage = (e: MessageEvent) => {
-      if (!e.data.longitude) {
-        return;
-      }
-      if (e.data.tempUnit) {
+      if (e.data.tempUnit && !e.data.latitude) {
         sessionStorage.setItem("tempUnit", e.data.tempUnit);
         if (setTempUnit) {
           setTempUnit(e.data.tempUnit);
+          return;
         }
-      }
-      if (e.data.latitude && e.data.longitude) {
+      } else if (e.data.latitude && e.data.longitude) {
         const { latitude, longitude, weather } = e.data;
+
         if (latitude === savedLatitude && longitude === savedLongitude) {
           return;
         }
         sessionStorage.setItem("latitude", latitude);
         sessionStorage.setItem("longitude", longitude);
-        if (setWeatherData && setWeatherLocation) {
-          setWeatherLocation([latitude, longitude]);
+        if (setWeatherData && setTempUnit) {
           setWeatherData(weather);
           return;
         }
@@ -163,8 +158,8 @@ const AppsWrapper: React.FC<Props> = ({
           {weatherapp && savedLongitude && savedLatitude && (
             <iframe
               style={iframeStyle}
-              // src={`http://localhost:3000/search?latitude=${savedLatitude}&longitude=${savedLongitude}`}
-              src={`https://jade-narwhal-43b15e.netlify.app/search?latitude=${savedLatitude}&longitude=${savedLongitude}`}
+              src={`http://localhost:3000/search?latitude=${savedLatitude}&longitude=${savedLongitude}`}
+              // src={`https://jade-narwhal-43b15e.netlify.app/search?latitude=${savedLatitude}&longitude=${savedLongitude}`}
             />
           )}
           {weatherapp && !savedLongitude && !savedLatitude && (
@@ -172,8 +167,8 @@ const AppsWrapper: React.FC<Props> = ({
               width={"110%"}
               height={"110%"}
               style={iframeStyle}
-              src={`https://jade-narwhal-43b15e.netlify.app`}
-              // src="http://localhost:3000"
+              // src={`https://jade-narwhal-43b15e.netlify.app`}
+              src="http://localhost:3000"
             />
           )}
 
