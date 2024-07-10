@@ -158,8 +158,8 @@ const AppsWrapper: React.FC<Props> = ({
           {weatherapp && savedLongitude && savedLatitude && (
             <iframe
               style={iframeStyle}
-              src={`http://localhost:3000/search?latitude=${savedLatitude}&longitude=${savedLongitude}`}
-              // src={`https://jade-narwhal-43b15e.netlify.app/search?latitude=${savedLatitude}&longitude=${savedLongitude}`}
+              // src={`http://localhost:3000/search?latitude=${savedLatitude}&longitude=${savedLongitude}`}
+              src={`https://jade-narwhal-43b15e.netlify.app/search?latitude=${savedLatitude}&longitude=${savedLongitude}`}
             />
           )}
           {weatherapp && !savedLongitude && !savedLatitude && (
@@ -167,8 +167,8 @@ const AppsWrapper: React.FC<Props> = ({
               width={"110%"}
               height={"110%"}
               style={iframeStyle}
-              // src={`https://jade-narwhal-43b15e.netlify.app`}
-              src="http://localhost:3000"
+              src={`https://jade-narwhal-43b15e.netlify.app`}
+              // src="http://localhost:3000"
             />
           )}
 
