@@ -54,11 +54,12 @@ const AppsWrapper: React.FC<Props> = ({
   const mainColor = theme.palette.primary.main;
   const weatherLocation = appContext?.weatherLocation;
   const setWeatherData = appContext?.setWeatherData;
+  const setWeatherLocation = appContext?.setWeatherLocation;
   const setTempUnit = appContext?.setTempUnit;
   const [buttonClass, setButtonClass] = useState<string>("show");
 
-  const latitude = weatherLocation && weatherLocation[0];
-  const longitude = weatherLocation && weatherLocation[1];
+  const savedLatitude = weatherLocation && weatherLocation[0];
+  const savedLongitude = weatherLocation && weatherLocation[1];
 
   useEffect(() => {
     if (!open) setOpen(true);
@@ -72,6 +73,9 @@ const AppsWrapper: React.FC<Props> = ({
 
   useEffect(() => {
     const getPostMessage = (e: MessageEvent) => {
+      if (!e.data.longitude) {
+        return;
+      }
       if (e.data.tempUnit) {
         sessionStorage.setItem("tempUnit", e.data.tempUnit);
         if (setTempUnit) {
@@ -80,10 +84,13 @@ const AppsWrapper: React.FC<Props> = ({
       }
       if (e.data.latitude && e.data.longitude) {
         const { latitude, longitude, weather } = e.data;
+        if (latitude === savedLatitude && longitude === savedLongitude) {
+          return;
+        }
         sessionStorage.setItem("latitude", latitude);
         sessionStorage.setItem("longitude", longitude);
-        console.log(weather, "WEATHER RETRIEVED");
-        if (setWeatherData) {
+        if (setWeatherData && setWeatherLocation) {
+          setWeatherLocation([latitude, longitude]);
           setWeatherData(weather);
           return;
         }
@@ -153,14 +160,14 @@ const AppsWrapper: React.FC<Props> = ({
           {messages && (
             <iframe style={iframeStyle} src="https://mesgboard.fly.dev" />
           )}
-          {weatherapp && longitude && latitude && (
+          {weatherapp && savedLongitude && savedLatitude && (
             <iframe
               style={iframeStyle}
-              // src={`http://localhost:3000/search?latitude=${latitude}&longitude=${longitude}`}
-              src={`https://jade-narwhal-43b15e.netlify.app/search?latitude=${latitude}&longitude=${longitude}`}
+              // src={`http://localhost:3000/search?latitude=${savedLatitude}&longitude=${savedLongitude}`}
+              src={`https://jade-narwhal-43b15e.netlify.app/search?latitude=${savedLatitude}&longitude=${savedLongitude}`}
             />
           )}
-          {weatherapp && !longitude && !latitude && (
+          {weatherapp && !savedLongitude && !savedLatitude && (
             <iframe
               width={"110%"}
               height={"110%"}

@@ -39,6 +39,9 @@ function App() {
   useEffect(() => {
     const lat = sessionStorage.getItem("latitude");
     const lon = sessionStorage.getItem("longitude");
+    if (lat && lon) {
+      setWeatherLocation([Number(lat), Number(lon)]);
+    }
     if (!weatherData) {
       if (lat && lon) {
         getWeather(Number(lat), Number(lon));
@@ -51,7 +54,7 @@ function App() {
     }
     setInfoMessage(true);
     sessionStorage.setItem("infoMessage", "showed");
-  }, [weatherData]);
+  }, []);
 
   return (
     <Grid
@@ -72,6 +75,7 @@ function App() {
           weatherData={weatherData}
           weatherLocation={weatherLocation}
           setWeatherData={setWeatherData}
+          setWeatherLocation={setWeatherLocation}
         />
       </DndProvider>
       <div

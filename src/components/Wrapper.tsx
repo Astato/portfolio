@@ -52,6 +52,7 @@ interface DarkModeContextType {
   setNightLight: React.Dispatch<React.SetStateAction<boolean>>;
   setColorPalette: React.Dispatch<React.SetStateAction<ColorPalette>>;
   setWeatherData: React.Dispatch<React.SetStateAction<any>>;
+  setWeatherLocation: React.Dispatch<React.SetStateAction<[number, number]>>;
 }
 
 export const DarkModeContext = createContext<DarkModeContextType | undefined>(
@@ -61,6 +62,7 @@ export const DarkModeContext = createContext<DarkModeContextType | undefined>(
 interface WrapperProps {
   weatherData: any;
   weatherLocation: [number, number];
+  setWeatherLocation: React.Dispatch<React.SetStateAction<[number, number]>>;
   setWeatherData: React.Dispatch<React.SetStateAction<any>>;
 }
 
@@ -84,6 +86,7 @@ const Wrapper: React.FC<WrapperProps> = ({
   weatherData,
   weatherLocation,
   setWeatherData,
+  setWeatherLocation,
 }) => {
   const [colorPalette, setColorPalette] = useState<ColorPalette>({
     disabled: "#1e1d1f",
@@ -280,6 +283,7 @@ const Wrapper: React.FC<WrapperProps> = ({
         setColorPalette,
         colorPalette,
         weatherLocation,
+        setWeatherLocation,
         setWeatherData,
         tempUnit,
         setTempUnit,
