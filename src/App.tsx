@@ -4,8 +4,8 @@ import Wrapper from "./components/Wrapper";
 import { TouchBackend } from "react-dnd-touch-backend";
 import { DndProvider } from "react-dnd";
 import { useEffect, useState } from "react";
-import dockImage from "./assets/pixel-dock-finished.png";
-import { Info, Help } from "@mui/icons-material";
+import dockImage from "/assets/pixel-dock-finished.png";
+import { Help } from "@mui/icons-material";
 
 function App() {
   const [infoMessage, setInfoMessage] = useState<boolean>(
