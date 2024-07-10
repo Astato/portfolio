@@ -36,7 +36,7 @@ export interface DraggableProps {
   left: number;
   style?: React.CSSProperties;
   id: string;
-  onClick?: () => void;
+  onClick?: (targetApp: string) => void;
   tooltip?: string;
   children?: ReactNode;
   key: string;
@@ -310,18 +310,19 @@ interface ScreenProps {
   weatherData: WeatherData;
 }
 
-const WeatherComponent: React.FC<DraggableProps> = () => {
+const WeatherComponent: React.FC<DraggableProps> = ({ onClick }) => {
   const AppContext = useContext(DarkModeContext);
   const weatherData: WeatherData = AppContext?.weatherData;
   const theme = useTheme();
   const darkMode = AppContext?.darkMode;
+  const tempUnit = AppContext?.tempUnit;
   const mainColor = theme.palette.primary.main;
   const darkColor = theme.palette.primary.dark;
   let temperature = "";
 
   const icon = weatherData.dt && weatherData.weather[0].icon;
   if (weatherData.dt) {
-    weatherData.sys.country === "US"
+    weatherData.sys.country === "US" || tempUnit === "°F"
       ? (temperature = (
           ((weatherData.main.feels_like - 273.15) * 9) / 5 +
           32
@@ -330,6 +331,11 @@ const WeatherComponent: React.FC<DraggableProps> = () => {
   }
   return (
     <div
+      onClick={() => {
+        if (onClick) {
+          onClick("/weatherapp/");
+        }
+      }}
       style={{
         background: darkMode ? darkColor : mainColor,
         display: "flex",
@@ -415,6 +421,7 @@ const Screen: React.FC<ScreenProps> = () => {
   const handleIconClick = (targetApp: string) => {
     f7.views.current.router.navigate(targetApp);
     setOpenedApp && setOpenedApp(true);
+    return;
   };
 
   const Apps = [
@@ -438,6 +445,7 @@ const Screen: React.FC<ScreenProps> = () => {
       name={"weather"}
       id="weather"
       key="weather-widget"
+      onClick={handleIconClick}
     />,
 
     <IconComponent

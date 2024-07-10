@@ -15,7 +15,6 @@ import {
   Box,
   useTheme,
 } from "@mui/material";
-import { budgetMergeSort } from "../../utils/mergeSort";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { MobileDatePicker as DatePicker } from "@mui/x-date-pickers";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFnsV3";
@@ -347,7 +346,7 @@ const DynaGraph = () => {
   const [descriminate, setDescriminate] = useState<string>("Yes");
 
   const [viewMode, setViewMode] = useState<string>("Linear");
-  const bigData = true;
+  const [bigData, setBigData] = useState<boolean>(false);
   const [advancedFilters, setAdvancedFilters] = useState<number[]>([1, 1]);
   const [filterTabNav, setFilterTabNav] = useState<string>("Year");
   const [isFormInvalid, setIsFormInvalid] = useState({
@@ -557,10 +556,10 @@ const DynaGraph = () => {
         })
       );
     }
-    if (salesDummyData) {
+    if (bigData) {
       setSalesData(salesDummyData);
     }
-  }, [budgetData]);
+  }, [budgetData, bigData]);
 
   const handleGraphChange = (e: React.MouseEvent, graph: string) => {
     setAppliedFilters({});
@@ -688,15 +687,14 @@ const DynaGraph = () => {
             >
               Sales
             </Button>
+            <div>
+              <Button variant="outlined" onClick={() => setBigData(!bigData)}>
+                Sample Data
+              </Button>
+            </div>
           </List>
         </Grid>
-        <Grid
-          width={"100%"}
-          item
-          container
-          xs={12}
-          // margin={"-24px 0 0 0"}
-        >
+        <Grid width={"100%"} item container xs={12}>
           <Grid
             style={{
               width: "100%",
@@ -1250,7 +1248,7 @@ const DynaGraph = () => {
                           onClick={(e) => handleGraphChange(e, "PieChart")}
                         />
                       </Tooltip>
-                      <Tooltip
+                      {/* <Tooltip
                         title="Predict"
                         style={{
                           display:
@@ -1269,7 +1267,7 @@ const DynaGraph = () => {
                           }}
                           onClick={() => setGraphView("Predict")}
                         />
-                      </Tooltip>
+                      </Tooltip> */}
                       <div
                         style={{
                           opacity: selectedOption === "sales" ? "0" : "1",
@@ -1285,6 +1283,7 @@ const DynaGraph = () => {
                           onClick={() => setShowFilters(!showFilters)}
                         ></FilterAlt>
                       </div>
+
                       {/* <Button sx={{ p: 0, ml: "1rem" }} onClick={handleDownload}>
                         <Download sx={{ fill: svgFill }}></Download>
                       </Button> */}
@@ -1903,7 +1902,7 @@ const DynaGraph = () => {
                     ></TableComponent>
                   ) : (
                     <TableComponent
-                      salesData={salesDummyData}
+                      salesData={salesData}
                       setSalesData={setSalesData}
                     ></TableComponent>
                   )

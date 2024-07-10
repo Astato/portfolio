@@ -12,6 +12,12 @@ import photosIcon from "../assets/icons/Google_Photos_icon.svg";
 import calculatorIcon from "../assets/icons/calc-icon.webp";
 import calendarIcon from "../assets/icons/Google_Calendar_icon.svg.png";
 import dynagraphIcon from "../assets/icons/icon-dynagraph-2.png";
+import sociallyIcon from "../assets/icons/socially.png";
+import storeIcon from "../assets/icons/storeIcon4.png";
+import messageIcon from "../assets/icons/Google_Messages_logo.png";
+import blogIcon from "../assets/icons/disclogo.png";
+import githubIcon from "../assets/icons/github-mark-white.png";
+import weatherIcon from "../assets/icons/weatherIcon.png";
 import { f7 } from "framework7-react";
 import { Settings } from "@mui/icons-material";
 ////falta touch end and touch start or touchmove for device compatibility ////////////
@@ -110,6 +116,62 @@ const AppDrawer: React.FC = () => {
       name={"calendar-drawer"}
       id={"calendar-drawer"}
       style={{ backgroundImage: `url(${calendarIcon})`, backgroundSize: "68%" }}
+      draggable={true}
+    />,
+    <IconComponent
+      onClick={() => handleIconClick("/socially/")}
+      name={"socially-drawer"}
+      id={"socially-drawer"}
+      style={{
+        backgroundImage: `url(${sociallyIcon})`,
+        backgroundSize: "100%",
+      }}
+      draggable={true}
+    />,
+    <IconComponent
+      onClick={() => handleIconClick("/store/")}
+      name={"store-drawer"}
+      id={"store-drawer"}
+      style={{ backgroundImage: `url(${storeIcon})`, backgroundSize: "90%" }}
+      draggable={true}
+    />,
+    <IconComponent
+      onClick={() => handleIconClick("/messages/")}
+      name={"store-drawer"}
+      id={"store-drawer"}
+      style={{ backgroundImage: `url(${messageIcon})`, backgroundSize: "100%" }}
+      draggable={true}
+    />,
+    <IconComponent
+      onClick={() => handleIconClick("/blog/")}
+      name={"store-drawer"}
+      id={"store-drawer"}
+      style={{ backgroundImage: `url(${blogIcon})`, backgroundSize: "80%" }}
+      draggable={true}
+    />,
+    <IconComponent
+      onClick={() => window.open("https://github.com/Astato")}
+      name={"github-drawer"}
+      id={"github-drawer"}
+      style={{
+        backgroundImage: `url(${githubIcon})`,
+        backgroundSize: "110%",
+        backgroundPosition: "center",
+        backgroundColor: "black",
+        filter: darkMode ? "invert(0)" : "invert(1)",
+      }}
+      draggable={true}
+    />,
+    <IconComponent
+      onClick={() => handleIconClick("/weatherapp/")}
+      name={"weather-drawer"}
+      id={"weather-drawer"}
+      style={{
+        backgroundImage: `url(${weatherIcon})`,
+        backgroundSize: "110%",
+        backgroundPosition: "center",
+        backgroundColor: "black",
+      }}
       draggable={true}
     />,
     <IconComponent

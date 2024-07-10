@@ -12,6 +12,9 @@ function App() {
     Boolean(sessionStorage.getItem("infoMessage"))
   );
   const [weatherData, setWeatherData] = useState("");
+  const [weatherLocation, setWeatherLocation] = useState<[number, number]>([
+    0, 0,
+  ]);
 
   async function getWeather(latitude: number, longitude: number) {
     if (latitude && longitude) {
@@ -21,6 +24,7 @@ function App() {
         );
         if (response.status === 200) {
           const data = await response.json();
+          setWeatherLocation([latitude, longitude]);
           return setWeatherData(data);
         }
       } catch (error) {
@@ -33,12 +37,18 @@ function App() {
   }
 
   useEffect(() => {
-    // if (!weatherData) {
-    //   navigator.geolocation.getCurrentPosition(
-    //     (pos) => getWeather(pos.coords.latitude, pos.coords.longitude),
-    //     () => setWeatherData("401")
-    //   );
-    // }
+    const lat = sessionStorage.getItem("latitude");
+    const lon = sessionStorage.getItem("longitude");
+    if (!weatherData) {
+      if (lat !== null && lon !== null) {
+        getWeather(Number(lat), Number(lon));
+      } else {
+        navigator.geolocation.getCurrentPosition(
+          (pos) => getWeather(pos.coords.latitude, pos.coords.longitude),
+          () => setWeatherData("401")
+        );
+      }
+    }
     setInfoMessage(true);
     sessionStorage.setItem("infoMessage", "showed");
   }, []);
@@ -58,7 +68,11 @@ function App() {
           dealyTouchStart: 500,
         }}
       >
-        <Wrapper weatherData={weatherData} />
+        <Wrapper
+          weatherData={weatherData}
+          weatherLocation={weatherLocation}
+          setWeatherData={setWeatherData}
+        />
       </DndProvider>
       <div
         style={{

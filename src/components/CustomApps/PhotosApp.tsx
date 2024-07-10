@@ -9,13 +9,7 @@ import {
   PhotoBrowser,
   useStore,
 } from "framework7-react";
-import React, {
-  ReactNode,
-  SetStateAction,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { ReactNode, SetStateAction, useEffect, useState } from "react";
 import Resizer from "react-image-file-resizer";
 import wallpaper1 from "../../assets/pexels-brady-knoll-5409751.jpg";
 import wallpaper2 from "../../assets/pexels-eberhard-grossgasteiger-572897.jpg";
@@ -265,26 +259,6 @@ const PhotosApp = () => {
       key={4}
       openImage={openImage}
     />,
-    // <ImageItem src={wallpaper5} />,
-    // <ImageItem src={wallpaper6} />,
-    // <ImageItem src={wallpaper1} />,
-    // <ImageItem src={wallpaper2} />,
-    // <ImageItem src={wallpaper3} />,
-    // <ImageItem src={wallpaper4} />,
-    // <ImageItem src={wallpaper5} />,
-    // <ImageItem src={wallpaper6} />,
-    // <ImageItem src={wallpaper1} />,
-    // <ImageItem src={wallpaper2} />,
-    // <ImageItem src={wallpaper3} />,
-    // <ImageItem src={wallpaper4} />,
-    // <ImageItem src={wallpaper5} />,
-    // <ImageItem src={wallpaper6} />,
-    // <ImageItem src={wallpaper1} />,
-    // <ImageItem src={wallpaper2} />,
-    // <ImageItem src={wallpaper3} />,
-    // <ImageItem src={wallpaper4} />,
-    // <ImageItem src={wallpaper5} />,
-    // <ImageItem src={wallpaper6} />,
   ];
 
   return (

@@ -35,7 +35,10 @@ interface DarkModeContextType {
   brightness: number;
   weatherData: any;
   openedApp: boolean;
+  weatherLocation: [number, number];
   colorPalette: ColorPalette;
+  tempUnit: string;
+  setTempUnit: React.Dispatch<React.SetStateAction<string>>;
   setOpenedApp: React.Dispatch<React.SetStateAction<boolean>>;
   setBrightness: React.Dispatch<React.SetStateAction<number>>;
   setNewItem: React.Dispatch<React.SetStateAction<ReactElement | null>>;
@@ -48,6 +51,7 @@ interface DarkModeContextType {
   setHubModeActive: React.Dispatch<React.SetStateAction<boolean>>;
   setNightLight: React.Dispatch<React.SetStateAction<boolean>>;
   setColorPalette: React.Dispatch<React.SetStateAction<ColorPalette>>;
+  setWeatherData: React.Dispatch<React.SetStateAction<any>>;
 }
 
 export const DarkModeContext = createContext<DarkModeContextType | undefined>(
@@ -56,6 +60,8 @@ export const DarkModeContext = createContext<DarkModeContextType | undefined>(
 
 interface WrapperProps {
   weatherData: any;
+  weatherLocation: [number, number];
+  setWeatherData: React.Dispatch<React.SetStateAction<any>>;
 }
 
 const options = {
@@ -74,7 +80,11 @@ async function extractWallpaperColors(src: ImageData) {
   }
 }
 
-const Wrapper: React.FC<WrapperProps> = ({ weatherData }) => {
+const Wrapper: React.FC<WrapperProps> = ({
+  weatherData,
+  weatherLocation,
+  setWeatherData,
+}) => {
   const [colorPalette, setColorPalette] = useState<ColorPalette>({
     disabled: "#1e1d1f",
     nightmode: "false",
@@ -87,6 +97,9 @@ const Wrapper: React.FC<WrapperProps> = ({ weatherData }) => {
   const [newItem, setNewItem] = useState<ReactElement | null>(null);
   const [homeWallpaper, setHomeWallpaper] = useState<string | ImageData>(
     defaultWallpaper
+  );
+  const [tempUnit, setTempUnit] = useState(
+    sessionStorage.getItem("tempUnit") || ""
   );
   const [lockWallpaper, setLockWallpaper] = useState<string>(defaultWallpaper);
   const [nightLight, setNightLight] = useState<boolean>(false);
@@ -229,11 +242,12 @@ const Wrapper: React.FC<WrapperProps> = ({ weatherData }) => {
     const imgDock = document.getElementById("dock-image");
     if (imgDock) {
       if (hubModeActive) {
+        imgDock.classList.remove("undock-image");
         imgDock.classList.add("dock-image");
       } else if (!hubModeActive && imgDock.className === "dock-image") {
         imgDock.classList.remove("dock-image");
+        imgDock.classList.add("undock-image");
       }
-      imgDock.classList.add("undock-image");
     }
   }, [hubModeActive]);
 
@@ -265,6 +279,10 @@ const Wrapper: React.FC<WrapperProps> = ({ weatherData }) => {
         setOpenedApp,
         setColorPalette,
         colorPalette,
+        weatherLocation,
+        setWeatherData,
+        tempUnit,
+        setTempUnit,
       }}
     >
       <ThemeProvider theme={darkMode ? DarkTheme : LightTheme}>
@@ -272,7 +290,7 @@ const Wrapper: React.FC<WrapperProps> = ({ weatherData }) => {
           container
           id="wrapper"
           justifyContent={"center"}
-          // className={hubModeActive ? "dock" : "undock"}
+          className={hubModeActive ? "dock" : "undock"}
           alignItems={"center"}
         >
           {hubModeActive ? (
@@ -344,6 +362,51 @@ const Wrapper: React.FC<WrapperProps> = ({ weatherData }) => {
                   options: {
                     props: {
                       dynagraph: true,
+                    },
+                  },
+                },
+                {
+                  path: "/socially/",
+                  component: AppsWrapper,
+                  options: {
+                    props: {
+                      socially: true,
+                    },
+                  },
+                },
+                {
+                  path: "/weatherapp/",
+                  component: AppsWrapper,
+                  options: {
+                    props: {
+                      weatherapp: true,
+                    },
+                  },
+                },
+                {
+                  path: "/store/",
+                  component: AppsWrapper,
+                  options: {
+                    props: {
+                      store: true,
+                    },
+                  },
+                },
+                {
+                  path: "/messages/",
+                  component: AppsWrapper,
+                  options: {
+                    props: {
+                      messages: true,
+                    },
+                  },
+                },
+                {
+                  path: "/blog/",
+                  component: AppsWrapper,
+                  options: {
+                    props: {
+                      blog: true,
                     },
                   },
                 },
