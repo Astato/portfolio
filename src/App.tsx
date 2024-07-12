@@ -8,9 +8,6 @@ import dockImage from "/assets/pixel-dock-finished.png";
 import { Help } from "@mui/icons-material";
 
 function App() {
-  const [infoMessage, setInfoMessage] = useState<boolean>(
-    Boolean(sessionStorage.getItem("infoMessage"))
-  );
   const [weatherData, setWeatherData] = useState("");
 
   async function getWeather(latitude: number, longitude: number) {
@@ -48,8 +45,6 @@ function App() {
         );
       }
     }
-    setInfoMessage(true);
-    sessionStorage.setItem("infoMessage", "showed");
   }, []);
 
   return (
@@ -89,14 +84,22 @@ function App() {
                   Just like a tablet (almost)
                 </span>
                 <ul>
-                  <li>Swipe up to open the Apps Drawer</li>
-                  <li>Click and hold to grab to add them to the home screen</li>
                   <li>
-                    Swipe down or grab an pull the notification bar to open
+                    Location is requested solely for weather functionality. You
+                    can also open the weather app an set it manually.
+                  </li>
+                  <li>Swipe up to open the Apps Drawer</li>
+                  <li>
+                    Click and hold to grab icons and add them to the home screen
+                    (from drawer)
+                  </li>
+                  <li>
+                    Swipe down or grab the topbar to pull down the notification
+                    bar (swipe up to close)
                   </li>
                   <li>Click to open an App</li>
                   <li>Swipe left or right to switch screens</li>
-                  <li>Open settings to check the customization options</li>
+                  <li>Open settings to check the customization options!</li>
                   <li>
                     Swipe the bottom gray bar (if an app is opened) to close the
                     app
@@ -116,27 +119,7 @@ function App() {
           ></Help>
         </Tooltip>
       </div>
-      {!infoMessage && (
-        <div
-          style={{
-            position: "absolute",
-            width: "200px",
-            height: "150px",
-            background: "gray",
-            color: "black",
-            left: "1rem",
-            top: "10rem",
-            borderRadius: "20px",
-            fontSize: "18px",
-            display: "flex",
-            zIndex: 2,
-          }}
-        >
-          <p style={{ margin: "auto 10px" }}>
-            Location is requested solely for weather functionality
-          </p>
-        </div>
-      )}
+
       <img id="dock-image" src={dockImage}></img>
     </Grid>
   );

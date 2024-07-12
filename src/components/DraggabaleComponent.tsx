@@ -234,38 +234,6 @@ const DraggableComponent: React.FC<DraggableBoxProps> = memo(
         }}
         onMouseLeave={() => (elementToPush.current = "")}
       >
-        {id === "photos" && !sessionStorage.getItem("animation-played") && (
-          <div
-            onAnimationEnd={() =>
-              sessionStorage.setItem("animation-played", "true")
-            }
-            id="attention-seeker"
-            style={{
-              background: "var(--f7-tooltip-bg-color)",
-              position: "absolute",
-              top: "-35px",
-              left: "-7px",
-              padding: "3px 6px",
-              color: "white",
-              borderRadius: "10px",
-            }}
-          >
-            Projects
-            <div
-              style={{
-                height: "20px",
-                width: "20px",
-                borderRadius: "100px 100px 1px 100px",
-                position: "absolute",
-                transform: "rotateZ(45deg)",
-                left: "calc(50% - 11px)",
-                background: "var(--f7-tooltip-bg-color)",
-                zIndex: "-1",
-                top: "10px",
-              }}
-            />
-          </div>
-        )}
         <Box children={children} preview={true} />
       </div>
     );
