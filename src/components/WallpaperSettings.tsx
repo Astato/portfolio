@@ -340,6 +340,9 @@ const WallpaperSettings: React.FC<SettingsProps> = ({
                 const stringified = JSON.stringify(parsed);
                 sessionStorage.setItem("uploadedImages", stringified);
               }
+              if(setOpenDialog){
+                setOpenDialog(false)
+              }
               return;
             }
           } catch (error) {
@@ -673,7 +676,12 @@ const WallpaperSettings: React.FC<SettingsProps> = ({
             <Button onClick={() => setInputFrom("")}>Cancel</Button>
           </Grid>
         )}
-        {inputFrom !== "URL" && <Button>From Device</Button>}
+        {inputFrom !== "URL" && <Button onClick={() => {
+          const clickEvent = new MouseEvent("click");
+          if (fileInputRef.current) {
+              return fileInputRef.current.dispatchEvent(clickEvent);
+            }
+        }} >From Device</Button>}
       </Dialog>
       {/* Wallpaper change photo gallery */}
       {history[0] === "change-wallpaper" && (
