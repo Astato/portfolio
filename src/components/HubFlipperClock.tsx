@@ -5,7 +5,7 @@ import { DarkModeContext } from "./Wrapper";
 const HubFlipperClock = () => {
   const appContext = useContext(DarkModeContext);
   const darkmode = appContext?.darkMode;
-  const [now, setNow] = useState<string | Date>(new Date().toLocaleString());
+  const [now, setNow] = useState<Date>(new Date());
   const [minutes, setminutes] = useState<string>("");
   const [hours, sethours] = useState<string>("");
   const minutesRef = useRef<HTMLDivElement>(null);
@@ -52,7 +52,7 @@ const HubFlipperClock = () => {
       sethours(formatHours);
     }
     const interval = setInterval(() => {
-      setNow(new Date().toLocaleString());
+      setNow(new Date());
       if (hours && formatHours !== hours) {
         //// prevents hours animation from playing twice
         const anim = playAnimation(hoursRef, "hours");

@@ -8,12 +8,12 @@ interface Props {
   preview?: string;
 }
 const HubDigitalClock: React.FC<Props> = ({ template, preview }) => {
-  const [now, setNow] = useState<Date | string>(new Date().toLocaleString());
+  const [now, setNow] = useState<Date>(new Date());
 
   useEffect(() => {
     if (!template) {
       const interval = setInterval(() => {
-        setNow(new Date().toLocaleString());
+        setNow(new Date());
       }, 1000);
       return () => clearInterval(interval);
     }

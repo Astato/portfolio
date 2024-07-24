@@ -152,9 +152,7 @@ const LineChart: React.FC<Props> = ({
       if (index > 0) {
         const amount = +item[1];
         const type = item[2];
-        const date = new Date(item[3]).toLocaleDateString(undefined, {
-          timeZone: "UTC",
-        });
+        const date = new Date(item[3]).toUTCString();
 
         let amountValue = amount;
 

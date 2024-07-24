@@ -779,7 +779,7 @@ const Calendar = () => {
             You already have an scheduled event for this time and date. Or you
             have overlapping events
           </p>
-          <p>Either delete it or remove it</p>
+          <p>Either Edit or remove it</p>
           <Grid display={"flex"} overflow={"hidden"} bgcolor={backgroundColor}>
             <Button
               variant="contained"
