@@ -1921,14 +1921,14 @@ const DynaGraph = () => {
                     ></LineChart>
                   ) : (
                     <SalesLineChart
-                      salesData={salesDummyData}
+                      salesData={salesData}
                       chartType={graphView === "chart" ? "Line" : graphView}
                     ></SalesLineChart>
                   )
                 ) : null}
                 {graphView === "PieChart" && selectedOption !== "budget" && (
                   <SalesLineChart
-                    salesData={salesDummyData}
+                    salesData={salesData}
                     chartType={graphView}
                   ></SalesLineChart>
                 )}
