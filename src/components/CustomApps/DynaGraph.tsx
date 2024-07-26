@@ -189,7 +189,7 @@ const AdvancedDateSelect: React.FC<AdvancedFilterSelectProps> = ({
       <DatePicker
         onChange={(e) => {
           if (e) {
-            handleChange(e.toLocaleDateString());
+            handleChange(e.toString());
           }
         }}
         sx={{ width: "10rem" }}
