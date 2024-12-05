@@ -156,9 +156,7 @@ const CardComponent: React.FC<CardProps> = ({
                 return (
                   <Tooltip
                     key={tooltip + index}
-                    title={
-                      tooltip[0].toLocaleUpperCase() + tooltip.substring(1)
-                    }
+                    title={tooltip[0].toUpperCase() + tooltip.substring(1)}
                   >
                     <CardMedia
                       sx={{ hover: { cursor: "grab" } }}
