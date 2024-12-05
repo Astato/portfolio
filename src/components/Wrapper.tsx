@@ -302,6 +302,66 @@ const Wrapper: React.FC<WrapperProps> = ({
     }
   }, [hubModeActive]);
 
+  const TabsComponent = (
+    <Tabs
+      id="page-select-tabs"
+      value={tab}
+      TabIndicatorProps={{ hidden: true }}
+      style={{
+        position: "absolute",
+        top: 0,
+        width: "600px",
+        left: "calc(50% - 300px)",
+      }}
+    >
+      <Tab
+        value="Interactive"
+        sx={{
+          color: "gray",
+          bgcolor:
+            tab === "Interactive" && !darkMode
+              ? "rgba(0,0,0,0.1)"
+              : "rgba(255,255,255,0.05)",
+          borderRadius: "0 0 0 100px",
+          fontWeight: "bolder",
+          width: "300px",
+        }}
+        onClick={(e) => {
+          if ("Interactive" === tab) return;
+          handleTabChange("Interactive");
+          const rootDiv = document.getElementById("root");
+          if (rootDiv) rootDiv.style.background = "";
+        }}
+        label="Interactive"
+      />
+      <Tab
+        value="Read-instead"
+        sx={{
+          color: "gray",
+          bgcolor:
+            tab === "Interactive" && !darkMode
+              ? "rgba(0,0,0,0.1)"
+              : "rgba(255,255,255,0.05)",
+          borderRadius: "0 0 100px 0px",
+          fontWeight: "bolder",
+          width: "300px",
+        }}
+        onClick={() => {
+          if ("Interactive" !== tab) return;
+          handleTabChange("Read-instead");
+          const rootDiv = document.getElementById("root");
+          if (rootDiv) {
+            rootDiv.style.background =
+              "linear-gradient(180deg, #0d0d0e 20%, #34348c 90%)";
+            // rootDiv.style.background = "#0d0d0e";
+            // rootDiv.style.background = "#34348c";
+          }
+        }}
+        label="Read instead"
+      />
+    </Tabs>
+  );
+
   return (
     <DarkModeContext.Provider
       value={{
@@ -358,67 +418,7 @@ const Wrapper: React.FC<WrapperProps> = ({
           className={hubModeActive ? "dock" : "undock"}
           alignItems={"center"}
         >
-          {!isSmallScreen &&
-            createPortal(
-              <Tabs
-                id="page-select-tabs"
-                value={tab}
-                TabIndicatorProps={{ hidden: true }}
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  width: "600px",
-                  left: "calc(50% - 300px)",
-                }}
-              >
-                <Tab
-                  value="Interactive"
-                  sx={{
-                    color: "gray",
-                    bgcolor:
-                      tab === "Interactive" && !darkMode
-                        ? "rgba(0,0,0,0.1)"
-                        : "rgba(255,255,255,0.05)",
-                    borderRadius: "0 0 0 100px",
-                    fontWeight: "bolder",
-                    width: "300px",
-                  }}
-                  onClick={(e) => {
-                    if ("Interactive" === tab) return;
-                    handleTabChange("Interactive");
-                    const rootDiv = document.getElementById("root");
-                    if (rootDiv) rootDiv.style.background = "";
-                  }}
-                  label="Interactive"
-                />
-                <Tab
-                  value="Read-instead"
-                  sx={{
-                    color: "gray",
-                    bgcolor:
-                      tab === "Interactive" && !darkMode
-                        ? "rgba(0,0,0,0.1)"
-                        : "rgba(255,255,255,0.05)",
-                    borderRadius: "0 0 100px 0px",
-                    fontWeight: "bolder",
-                    width: "300px",
-                  }}
-                  onClick={() => {
-                    if ("Interactive" !== tab) return;
-                    handleTabChange("Read-instead");
-                    const rootDiv = document.getElementById("root");
-                    if (rootDiv) {
-                      rootDiv.style.background =
-                        "linear-gradient(180deg, #0d0d0e 20%, #34348c 90%)";
-                      // rootDiv.style.background = "#0d0d0e";
-                      // rootDiv.style.background = "#34348c";
-                    }
-                  }}
-                  label="Read instead"
-                />
-              </Tabs>,
-              document.body
-            )}
+          <>{!isSmallScreen && createPortal(TabsComponent, document.body)}</>
 
           {hubModeActive ? (
             <HubMode></HubMode>

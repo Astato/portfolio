@@ -9,7 +9,7 @@ function Footer() {
   useEffect(() => {}, [selectedLanguage]);
 
   return (
-    <Grid xs={12} id="footer">
+    <Grid item xs={12} id="footer">
       <Grid>
         <List>
           <Tooltip title="Open" placement="left" arrow>

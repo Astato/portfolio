@@ -111,7 +111,7 @@ const Contact: React.FC<ContactProps> = ({ setMessageInProgress }) => {
   };
 
   return (
-    <Grid xs={12} id="contact">
+    <Grid item container xs={12} id="contact">
       <ThemeProvider theme={theme}>
         <h1>Contact</h1>
         <form style={{ gap: "1rem" }} onSubmit={(e) => e.preventDefault()}>

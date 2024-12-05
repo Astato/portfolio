@@ -104,7 +104,6 @@ const CardComponent: React.FC<CardProps> = ({
           effect={"creative"}
           grabCursor={true}
           allowTouchMove
-          loop
           style={{
             width: "100%",
             position: "relative",
@@ -127,17 +126,19 @@ const CardComponent: React.FC<CardProps> = ({
           {swiperImages &&
             swiperImages[imageKey].map((img: string, index) => {
               return (
-                <SwiperSlide style={{ height: "100%", width: "100%" }}>
+                <SwiperSlide
+                  style={{ height: "100%", width: "100%" }}
+                  key={img + index}
+                >
                   <div
                     className="swiper-images"
+                    key={imageKey + index}
                     style={{
                       display: "grid",
                       backgroundImage: `url(${img})`,
                       backgroundRepeat: "no-repeat",
                       backgroundPosition: "center",
                     }}
-                    // style={{ width: "100%", overflow: "hidden" }}
-                    // src={img}
                   ></div>
                 </SwiperSlide>
               );
@@ -154,6 +155,7 @@ const CardComponent: React.FC<CardProps> = ({
                 }
                 return (
                   <Tooltip
+                    key={tooltip + index}
                     title={
                       tooltip[0].toLocaleUpperCase() + tooltip.substring(1)
                     }
