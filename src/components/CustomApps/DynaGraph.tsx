@@ -189,7 +189,7 @@ const AdvancedDateSelect: React.FC<AdvancedFilterSelectProps> = ({
       <DatePicker
         onChange={(e) => {
           if (e) {
-            handleChange(e.toLocaleDateString());
+            handleChange(e.toString());
           }
         }}
         sx={{ width: "10rem" }}
@@ -1921,14 +1921,14 @@ const DynaGraph = () => {
                     ></LineChart>
                   ) : (
                     <SalesLineChart
-                      salesData={salesDummyData}
+                      salesData={salesData}
                       chartType={graphView === "chart" ? "Line" : graphView}
                     ></SalesLineChart>
                   )
                 ) : null}
                 {graphView === "PieChart" && selectedOption !== "budget" && (
                   <SalesLineChart
-                    salesData={salesDummyData}
+                    salesData={salesData}
                     chartType={graphView}
                   ></SalesLineChart>
                 )}

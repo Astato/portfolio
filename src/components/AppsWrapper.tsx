@@ -153,7 +153,7 @@ const AppsWrapper: React.FC<Props> = ({
             <iframe style={iframeStyle} src="https://prt-store.netlify.app" />
           )}
           {messages && (
-            <iframe style={iframeStyle} src="https://mesgboard.fly.dev" />
+            <iframe style={iframeStyle} src="https://mesgboard.fly.dev/sign-in" />
           )}
           {weatherapp && savedLongitude && savedLatitude && (
             <iframe
