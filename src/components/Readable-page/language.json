@@ -1,0 +1,90 @@
+{
+  "EN": {
+    "navbar": ["Home", "About", "Projects", "Contact"],
+    "landing_title": "Hello. <br /> I'm Gabriel. <br /> A web developer.",
+    "about": "<p>I’m a self-taught web developer from Argentina, passionate about creating innovative and original web apps. My journey into web development started in 2022, fueled by free online resources.<br><br />As I mastered HTML, CSS, and JavaScript, I discovered different platforms, which helped me dive deeper into non-relational databases, React, Express, and Webpack.<br /><br />Since then, I’ve completed over 20 projects, each one challenging me to learn new technologies suche as TypeScript and expand my knowledge. Although I haven’t yet worked professionally in the field, I’m yearning to bring my skills to meaningful projects and make a real impact.</p>",
+    "projects": [
+      {
+        "title": "Socially",
+        "description": "A social media application similar to X, built with React, Express, Sass, and Socket.io. Features include notifications and post alerts, client-side caching, media file uploads via Google Drive API, Google login, password recovery with code verification and expiration, trending hashtags based on popularity, hashtag and user search with custom text areas, infinite scroll and lazy loading, profile setup, messages, hashtags, mentions, and more."
+      },
+      {
+        "title": "API HUB",
+        "description": "A RESTful API built with Express, serving multiple applications. It includes authentication, Socket.io connections, Google Cloud media storage and authentication, data sanitization, emailing, and database connections. Technologies used include JWT, PassportJS, Socket.io, Google Cloud Services, MongoDB, Mongoose, NodeMailer, and ExpressJS."
+      },
+      {
+        "title": "Interactive Portfolio",
+        "description": "A client-side rendered web application designed for desktop browsers, mimicking Android tablet UX/UI. Features include dynamic wallpaper, customizable weather, dark mode, navigation bar, draggable icons, app drawer with droppable icons, customization options, dock mode, Android-like apps (calculator, photos, schedule), integration with my other web applications, brightness control, and night light. Technologies used include Framework7, MUI, TypeScript, React, ReactDnD, SwiperJS, and SASS."
+      },
+      {
+        "title": "Dynagraph",
+        "description": "An application within the interactive portfolio for budget and sales data input and visualization. Features include data filtering, search, table and graphic views (line, area, bar, pie charts), advanced and simple data comparison filters for budgets (month-to-month, year-to-year, up to five date ranges), and sales data visualization by periods, age group, gender, categories, etc."
+      },
+      {
+        "title": "Chat",
+        "description": "A server-side rendered (SSR) live chat application built with Express, Socket.io, CSS, PUG, and HTML. Features include caching, private chats, global chat, online/offline indicators, notifications, friends, password recovery, and customization."
+      },
+      {
+        "title": "DISC",
+        "description": "A client-side rendered content creation web application built with JS, CSS, and React. Features include profile creation and editing, content editing, media uploads, content deletion, filtering, similar content suggestions, comments, and profile customization."
+      },
+      {
+        "title": "Store",
+        "description": "A simplified store web application. Features include product and price filtering, shopping cart, responsive design, product pages, and a custom-built carousel."
+      },
+      {
+        "title": "Weather App",
+        "description": "A client-side rendered (CSR) web application built with JavaScript, React, and CSS. Features include location search, dynamic backgrounds, responsive design, extended forecasts, and unit selection."
+      },
+      {
+        "title": "And more...",
+        "description": "An assortment of other web applications, including a photo-tagging app, IMDb homepage mockup, to-do list web app, resume creator, Apple calculator, pomodoro clock, HTML markup, and tic-tac-toe."
+      }
+    ],
+    "footer": ["Projects, Home"]
+  },
+  "ES": {
+    "navbar": ["Inicio", "Quien Soy", "Projectos", "Contacto"],
+    "landing_title": "Hola. <br /> soy Gabriel. <br /> un web developer.",
+    "about": "<p>Soy un desarrollador web autodidacta de Argentina, apasionado por crear aplicaciones web innovadoras y originales. Mi viaje en el desarrollo web comenzó en 2022, impulsado por recursos en línea gratuitos.<br><br />A medida que dominaba HTML, CSS y JavaScript, descubrí diferentes plataformas que me ayudaron a profundizar en bases de datos no relacionales, React, Express y Webpack.<br /><br />Desde entonces, he completado más de 20 proyectos, cada uno desafiándome a aprender nuevas tecnologías como TypeScript y expandir mis conocimientos. Aunque aún no he trabajado profesionalmente en el campo, estoy anhelante de aportar mis habilidades a proyectos significativos y tener un impacto real.</p>",
+    "projects": [
+      {
+        "title": "Socially",
+        "description": "Una aplicación de red sociales similar a X, creada con React, Express, Sass y Socket.io. Sus características incluyen notificaciones y alertas de publicaciones, almacenamiento en caché del lado del cliente, carga de archivos multimedia a través de la API de Google Drive, inicio de sesión con Google, recuperación de contraseña con verificación de código y expiración, hashtags de tendencia basados en popularidad, búsqueda de hashtags y usuarios con áreas de texto personalizadas, desplazamiento infinito y carga diferida, configuración de perfil, mensajes, hashtags, menciones y más."
+      },
+      {
+        "title": "API HUB",
+        "description": "Una API RESTful construida con Express, que sirve a múltiples aplicaciones. Incluye autenticación, conexiones con Socket.io, almacenamiento y autenticación de medios en Google Cloud, sanitización de datos, envío de correos electrónicos y conexiones a bases de datos. Las tecnologías utilizadas incluyen JWT, PassportJS, Socket.io, Google Cloud Services, MongoDB, Mongoose, NodeMailer y ExpressJS."
+      },
+      {
+        "title": "Portafolio Interactivo",
+        "description": "Una aplicación web renderizada del lado del cliente, diseñada para navegadores de escritorio, que imita la UX/UI de una tableta Android. Sus características incluyen fondo de pantalla dinámico, clima personalizable, modo oscuro, barra de navegación, iconos arrastrables, cajón de aplicaciones con iconos desplegables, opciones de personalización, modo dock, aplicaciones similares a Android (calculadora, fotos, calendario), integración con otras mis otras aplicaciones web, control de brillo y luz nocturna. Las tecnologías utilizadas incluyen Framework7, MUI, TypeScript, React, ReactDnD, SwiperJS y SASS."
+      },
+      {
+        "title": "Dynagraph",
+        "description": "Una aplicación dentro del portafolio interactivo para la entrada y visualización de datos de presupuesto y ventas. Sus características incluyen filtrado de datos, búsqueda, vistas de tablas y gráficos (línea, área, barras, gráficos circulares), filtros avanzados y simples de comparación de datos para presupuestos (mes a mes, año a año, hasta cinco rangos de fechas), y visualización de datos de ventas por períodos, grupo de edad, género, categorías, etc."
+      },
+      {
+        "title": "Chat",
+        "description": "Una aplicación de chat en vivo renderizada del lado del servidor (SSR) construida con Express, Socket.io, CSS, PUG y HTML. Sus características incluyen almacenamiento en caché, chats privados, chat global, indicadores de conexión/desconexión, notificaciones, amigos, recuperación de contraseña y personalización."
+      },
+      {
+        "title": "DISC",
+        "description": "Una aplicación web de creación de contenido renderizada del lado del cliente, construida con JS, CSS y React. Sus características incluyen creación y edición de perfiles, edición de contenido, carga de medios, eliminación de contenido, filtrado, sugerencias de contenido similar, comentarios y personalización de perfiles."
+      },
+      {
+        "title": "Tienda",
+        "description": "Una aplicación web de tienda simplificada. Sus características incluyen filtrado de productos y precios, carrito de compras, diseño responsivo, páginas de productos y un carrusel personalizado."
+      },
+      {
+        "title": "Aplicación del Clima",
+        "description": "Una aplicación web renderizada del lado del cliente (CSR) construida con JavaScript, React y CSS. Sus características incluyen búsqueda de ubicación, fondos dinámicos, diseño responsivo, pronóstico extendido y selección de unidades."
+      },
+      {
+        "title": "Y más...",
+        "description": "Una variedad de otras aplicaciones web, incluyendo una aplicación de etiquetado de fotos, una maqueta de la página de inicio de IMDb, una aplicación web de lista de tareas, un creador de currículums, una calculadora de Apple, un reloj pomodoro, marcado HTML y un juego de tres en raya."
+      }
+    ],
+    "footer": ["Projects, Home"]
+  }
+}

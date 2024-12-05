@@ -1,4 +1,4 @@
-import { Grid, ThemeProvider, createTheme } from "@mui/material";
+import { Grid, ThemeProvider, createTheme, Tab, Tabs } from "@mui/material";
 import Screen from "./Screen";
 import { useEffect, useState, createContext, ReactElement } from "react";
 import Framework7 from "framework7/lite-bundle";
@@ -13,6 +13,8 @@ import HubMode from "./HubMode";
 import AppsWrapper from "./AppsWrapper";
 import { extractColors } from "extract-colors";
 import tinycolor from "tinycolor2";
+import { createPortal } from "react-dom";
+import ReadableApp from "./Readable-page/ReadableApp";
 Framework7.use(Framework7React);
 
 interface ColorPalette {
@@ -60,6 +62,8 @@ export const DarkModeContext = createContext<DarkModeContextType | undefined>(
 interface WrapperProps {
   weatherData: any;
   setWeatherData: React.Dispatch<React.SetStateAction<any>>;
+  tab: String;
+  setTab: React.Dispatch<React.SetStateAction<String>>;
 }
 
 const options = {
@@ -78,7 +82,12 @@ async function extractWallpaperColors(src: ImageData) {
   }
 }
 
-const Wrapper: React.FC<WrapperProps> = ({ weatherData, setWeatherData }) => {
+const Wrapper: React.FC<WrapperProps> = ({
+  weatherData,
+  setWeatherData,
+  tab,
+  setTab,
+}) => {
   const [colorPalette, setColorPalette] = useState<ColorPalette>({
     disabled: "#1e1d1f",
     nightmode: "false",
@@ -101,6 +110,9 @@ const Wrapper: React.FC<WrapperProps> = ({ weatherData, setWeatherData }) => {
   const [hubModeActive, setHubModeActive] = useState<boolean>(false);
   const [brightness, setBrightness] = useState<number>(1);
   const [openedApp, setOpenedApp] = useState<boolean>(false);
+  //const [tab, setTab] = useState<String>("Interactive");
+  const [isSmallScreen, setIsSmallScreen] = useState<boolean>(false);
+
   const main = colorPalette.active[0] || "#ffff";
   const dark = colorPalette.active[1] || "#ffff";
   const accent = colorPalette.active[2] ? colorPalette.active[2] : "#fff";
@@ -168,6 +180,10 @@ const Wrapper: React.FC<WrapperProps> = ({ weatherData, setWeatherData }) => {
     },
   });
 
+  const handleTabChange = (s: String) => {
+    setTab(s);
+  };
+
   useEffect(() => {
     if (homeWallpaper) {
       extractWallpaperColors(homeWallpaper as ImageData).then(
@@ -232,6 +248,47 @@ const Wrapper: React.FC<WrapperProps> = ({ weatherData, setWeatherData }) => {
     }
   }, [colorPalette, darkMode, nightLight]);
 
+  function checkScreenSize() {
+    const width = window.innerWidth;
+    if (width <= 1000) {
+      setTab("Read-instead");
+      setIsSmallScreen(true);
+    } else if (width > 1000) {
+      document.body.scrollTop = 0;
+      setIsSmallScreen(false);
+      //setTab("Interactive");
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", checkScreenSize);
+    return () => {
+      window.removeEventListener("resize", checkScreenSize);
+    };
+  }, [window.innerWidth]);
+
+  useEffect(() => {
+    window.addEventListener("load", checkScreenSize);
+    return () => {
+      window.removeEventListener("load", checkScreenSize);
+    };
+  }, []);
+
+  useEffect(() => {
+    const rootDiv = document.getElementById("root");
+    if (isSmallScreen) {
+      if (rootDiv) {
+        rootDiv.style.overflow = "auto";
+        document.body.style.overflow = "auto";
+      }
+    } else {
+      if (rootDiv) {
+        rootDiv.style.overflow = "hidden";
+        document.body.style.overflow = "hidden";
+      }
+    }
+  }, [isSmallScreen]);
+
   useEffect(() => {
     const imgDock = document.getElementById("dock-image");
     if (imgDock) {
@@ -280,12 +337,89 @@ const Wrapper: React.FC<WrapperProps> = ({ weatherData, setWeatherData }) => {
     >
       <ThemeProvider theme={darkMode ? DarkTheme : LightTheme}>
         <Grid
+          id="read-page"
+          style={{
+            display: tab !== "Interactive" ? "flex" : "none",
+            height: "100%",
+            paddingTop: isSmallScreen ? "0" : "3rem",
+          }}
+        >
+          {tab !== "Interactive" && (
+            <ReadableApp isSmallScreen={isSmallScreen} />
+          )}
+        </Grid>
+        <Grid
           container
+          style={{
+            display: tab === "Interactive" ? "flex" : "none",
+          }}
           id="wrapper"
           justifyContent={"center"}
           className={hubModeActive ? "dock" : "undock"}
           alignItems={"center"}
         >
+          {!isSmallScreen &&
+            createPortal(
+              <Tabs
+                id="page-select-tabs"
+                value={tab}
+                TabIndicatorProps={{ hidden: true }}
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  width: "600px",
+                  left: "calc(50% - 300px)",
+                }}
+              >
+                <Tab
+                  value="Interactive"
+                  sx={{
+                    color: "gray",
+                    bgcolor:
+                      tab === "Interactive" && !darkMode
+                        ? "rgba(0,0,0,0.1)"
+                        : "rgba(255,255,255,0.05)",
+                    borderRadius: "0 0 0 100px",
+                    fontWeight: "bolder",
+                    width: "300px",
+                  }}
+                  onClick={(e) => {
+                    if ("Interactive" === tab) return;
+                    handleTabChange("Interactive");
+                    const rootDiv = document.getElementById("root");
+                    if (rootDiv) rootDiv.style.background = "";
+                  }}
+                  label="Interactive"
+                />
+                <Tab
+                  value="Read-instead"
+                  sx={{
+                    color: "gray",
+                    bgcolor:
+                      tab === "Interactive" && !darkMode
+                        ? "rgba(0,0,0,0.1)"
+                        : "rgba(255,255,255,0.05)",
+                    borderRadius: "0 0 100px 0px",
+                    fontWeight: "bolder",
+                    width: "300px",
+                  }}
+                  onClick={() => {
+                    if ("Interactive" !== tab) return;
+                    handleTabChange("Read-instead");
+                    const rootDiv = document.getElementById("root");
+                    if (rootDiv) {
+                      rootDiv.style.background =
+                        "linear-gradient(180deg, #0d0d0e 20%, #34348c 90%)";
+                      // rootDiv.style.background = "#0d0d0e";
+                      // rootDiv.style.background = "#34348c";
+                    }
+                  }}
+                  label="Read instead"
+                />
+              </Tabs>,
+              document.body
+            )}
+
           {hubModeActive ? (
             <HubMode></HubMode>
           ) : (

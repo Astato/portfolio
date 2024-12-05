@@ -2,13 +2,17 @@ body {
   background-color: rgb(0, 0, 0);
 }
 
-body,
-html,
-#root {
+body {
   height: 100vh;
   width: 100vw;
   margin: 0;
   overflow: hidden;
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
 }
 
 #App {
@@ -338,7 +342,7 @@ html,
 .clock-container .react-clock .react-clock__face {
   border-radius: 0;
   border: none;
-  background: url("./assets/clock-bg2.svg");
+  background: url("/assets/clock-bg2.svg");
   background-position: center;
   background-size: contain;
 }
@@ -398,7 +402,6 @@ html,
     top: 1%;
   }
   100% {
-    background-color: rgb(255, 255, 255);
     opacity: 1;
     top: -95%;
     height: 95%;
@@ -408,7 +411,6 @@ html,
 }
 @keyframes drawerDown {
   0% {
-    background-color: rgb(255, 255, 255);
     opacity: 1;
     top: -95%;
     height: 95%;
@@ -416,7 +418,6 @@ html,
     border-radius: 24px 24px 0 0;
   }
   99% {
-    background-color: rgb(255, 255, 255);
     top: -0.6%;
     z-index: 9999999;
     opacity: 1;
@@ -425,7 +426,6 @@ html,
     opacity: 1;
     top: 0%;
     z-index: 9999999;
-    background-color: rgb(255, 255, 255);
     border-radius: 24px 24px 0 0;
     height: 0%;
   }
@@ -441,8 +441,12 @@ html,
 }
 
 .drawer-icons {
-  width: 60px;
-  height: 60px;
+  box-shadow: 0 0 3px 0px black;
+  position: relative;
+}
+
+.info-icon:hover {
+  cursor: help;
 }
 
 #icon {
@@ -554,6 +558,47 @@ html,
   cursor: pointer;
 }
 
+@keyframes hideOpenExternal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(150px);
+  }
+}
+#apps-wrapper-popup .show-open-external-btn, #apps-wrapper-popup .hide-open-external-btn:hover, #apps-wrapper-popup .hide-open-external-btn {
+  position: absolute;
+  top: 20px;
+  right: -10px;
+  padding: 3px;
+  width: fit-content;
+  height: fit-content;
+  padding-right: 1rem;
+  border-radius: 9px;
+  padding-left: 1.5rem;
+}
+#apps-wrapper-popup .show-open-external-btn p, #apps-wrapper-popup .hide-open-external-btn:hover p, #apps-wrapper-popup .hide-open-external-btn p {
+  font-weight: bold;
+  margin: 0;
+}
+#apps-wrapper-popup .hide-open-external-btn {
+  transform: translateX(150px);
+  transition: transform 0.5s 2s;
+}
+#apps-wrapper-popup .hide-open-external-btn p {
+  font-weight: bold;
+  margin: 0;
+  transition: 0.5s 2s;
+}
+#apps-wrapper-popup .hide-open-external-btn:hover {
+  transform: translateX(0px);
+  transition: transform 0.5s;
+}
+#apps-wrapper-popup .hide-open-external-btn:hover p {
+  margin-left: -1rem;
+  transition: 0.5s;
+}
+
 #settings-transparent {
   opacity: 0;
 }
@@ -566,6 +611,7 @@ html,
   width: 50px;
   height: 50px;
 }
+
 #edge-previous-draggable:hover {
   background-color: rgba(0, 0, 0, 0.1450980392);
   transition: all 0.5s;

@@ -6,9 +6,9 @@ import { DndProvider } from "react-dnd";
 import { useEffect, useState } from "react";
 import dockImage from "/assets/pixel-dock-finished.png";
 import { Help } from "@mui/icons-material";
-
 function App() {
   const [weatherData, setWeatherData] = useState("");
+  const [tab, setTab] = useState<String>("Interactive");
 
   async function getWeather(latitude: number, longitude: number) {
     if (latitude && longitude) {
@@ -34,7 +34,6 @@ function App() {
   useEffect(() => {
     const lat = sessionStorage.getItem("latitude");
     const lon = sessionStorage.getItem("longitude");
-
     if (!weatherData) {
       if (lat && lon) {
         getWeather(Number(lat), Number(lon));
@@ -46,6 +45,16 @@ function App() {
       }
     }
   }, []);
+
+  useEffect(() => {
+    const rootDiv = document.getElementById("root");
+    if (tab !== "Interactive" && rootDiv) {
+      rootDiv.style.height = "fit-content";
+    } else if (tab === "Interactive" && rootDiv) {
+      rootDiv.style.overflowY = "hidden";
+      rootDiv.style.height = "100%";
+    }
+  }, [tab]);
 
   return (
     <Grid
@@ -62,7 +71,12 @@ function App() {
           dealyTouchStart: 500,
         }}
       >
-        <Wrapper weatherData={weatherData} setWeatherData={setWeatherData} />
+        <Wrapper
+          weatherData={weatherData}
+          setWeatherData={setWeatherData}
+          tab={tab}
+          setTab={setTab}
+        />
       </DndProvider>
       <div
         style={{
@@ -111,6 +125,7 @@ function App() {
         >
           <Help
             style={{
+              display: !(tab === "Interactive") ? "none" : "inherit",
               fill: "white",
               fontSize: "30px",
               backgroundColor: "gray",
@@ -120,7 +135,11 @@ function App() {
         </Tooltip>
       </div>
 
-      <img id="dock-image" src={dockImage}></img>
+      <img
+        id="dock-image"
+        src={dockImage}
+        hidden={!(tab === "Interactive")}
+      ></img>
     </Grid>
   );
 }
