@@ -41,7 +41,7 @@ import { languageContext } from "../ReadableApp";
 interface CardProps {
   title: string;
   summary: string;
-  tech: string[];
+  tech: { img: string; alt: string }[];
   imageKey: string;
 }
 
@@ -147,26 +147,15 @@ const CardComponent: React.FC<CardProps> = ({
         <CardHeader
           subheader={
             <div className="card-icons">
-              {tech.map((img, index) => {
-                const match = img.match(/logos\/(.*?)-icon/);
-                let tooltip = "";
-                if (match && match[1]) {
-                  tooltip = match[1];
-                }
+              {tech.map((img: { img: string; alt: string }, index) => {
                 return (
-                  <Tooltip
-                    key={tooltip + index}
-                    title={
-                      tooltip
-                        ? tooltip[0].toUpperCase() + tooltip.substring(1)
-                        : ""
-                    }
-                  >
+                  <Tooltip key={img.alt + index} title={img.alt}>
                     <CardMedia
                       sx={{ hover: { cursor: "grab" } }}
                       key={index}
                       component="img"
-                      image={img}
+                      image={img.img}
+                      alt={img.alt}
                     />
                   </Tooltip>
                 );
@@ -242,12 +231,12 @@ function Projects() {
             Profile setup, Messages, Hashtags and Mentions, among other functionallity `
           }
           tech={[
-            JsIcon,
-            ReactIcon,
-            SocketIcon,
-            Sassicon,
-            GoogleIcon,
-            MongoIcon,
+            { img: JsIcon, alt: "JavaScript" },
+            { img: ReactIcon, alt: "React" },
+            { img: SocketIcon, alt: "Socket.io" },
+            { img: Sassicon, alt: "SASS" },
+            { img: GoogleIcon, alt: "Google" },
+            { img: MongoIcon, alt: "Mongo" },
           ]}
           imageKey="socially"
         ></CardComponent>
@@ -259,7 +248,13 @@ function Projects() {
           Among the functionallity these cover, authentication, Socket.io connection, Google Cloud media storage and authentication, sanitization, emailing and Database connection.   
           The technologies used include, JTW, PassportJS, Socket.io, Google Cloud Service, MongoDB, Mongoose, NodeMailer, ExpressJS and Socket.io`
           }
-          tech={[JsIcon, NodeIcon, SocketIcon, MongoIcon, GoogleIcon]}
+          tech={[
+            { img: JsIcon, alt: "JavaScript" },
+            { img: NodeIcon, alt: "NodeJs" },
+            { img: SocketIcon, alt: "Socket.io" },
+            { img: MongoIcon, alt: "Mongo" },
+            { img: GoogleIcon, alt: "Google" },
+          ]}
           imageKey="hub"
         ></CardComponent>
         <CardComponent
@@ -270,7 +265,13 @@ function Projects() {
             (projectsText && projectsText[2].description) ||
             "A Client-side rendered web application, build for desktop browsers that resembles Android tablets UX/UI. Some of the functionallity include, dynamic wallpaper, customizable weather,dark mode, navigation bar, draggable icons, apps drawer with droppable icons, customization, dock-mode, android-like applications (calculator, photos and schedule), integration and connectionwith my other web applications, brightness and night light. Some of the technologies used include: Framework7, MUI, TypeScript, React, ReactDnD, SwiperJS and SASS"
           }
-          tech={[TsIcon, Sassicon, ReactIcon, MuiIcon, F7Icon]}
+          tech={[
+            { img: TsIcon, alt: "TypeScript" },
+            { img: Sassicon, alt: "SASS" },
+            { img: ReactIcon, alt: "React" },
+            { img: MuiIcon, alt: "MUI" },
+            { img: F7Icon, alt: "Framework7" },
+          ]}
           imageKey="portfolio"
         ></CardComponent>
         <CardComponent
@@ -279,7 +280,11 @@ function Projects() {
             (projectsText && projectsText[3].description) ||
             "A application built-in the interactive porfolio.It's a budget and sales data input and visualization application.Some of it's functionallity include: Data filtering, data search, table and graphic views such as line, area, bar or piechart. For budget contains an advanced and simple data comparison filters, dynamically validated by input data, these include from month to month, year to year or up to 5 validated dates ranges. For sales, the application allows user to filter and visualize most sales by periods, age-grouṕ, gender, categories, etc."
           }
-          tech={[TsIcon, MuiIcon, ReactIcon]}
+          tech={[
+            { img: TsIcon, alt: "TypeScript" },
+            { img: MuiIcon, alt: "MUI" },
+            { img: ReactIcon, alt: "React" },
+          ]}
           imageKey="dyna"
         ></CardComponent>
         <CardComponent
@@ -289,7 +294,14 @@ function Projects() {
             `A Server-side rendered (SSR) live Chat application, built using Express, Socket.io, CSS, PUG and HTML.
             Among it's functionality these include:Caching, Private Chats , tGlobal chat, Online / Offline indicator, notifications, Friends, Password recovery and customization`
           }
-          tech={[JsIcon, CssIcon, HtmlIcon, NodeIcon, SocketIcon]}
+          tech={[
+            { img: JsIcon, alt: "JavaScript" },
+            { img: CssIcon, alt: "CSS" },
+            { img: HtmlIcon, alt: "HTML" },
+            { img: NodeIcon, alt: "NodeJs" },
+            { img: SocketIcon, alt: "Socket.io" },
+            { img: MongoIcon, alt: "Mongo" },
+          ]}
           imageKey="chat"
         ></CardComponent>
         <CardComponent
@@ -299,7 +311,12 @@ function Projects() {
             `"A Client-side rendered content creation web application, built using JS, CSS and React.
             Among it's functionality these include: profile and profile edition, content edition, media upload, content deletion, filtering, similar content sugestion, comments and profile customization`
           }
-          tech={[JsIcon, ReactIcon, CssIcon, MongoIcon]}
+          tech={[
+            { img: JsIcon, alt: "JavaScript" },
+            { img: ReactIcon, alt: "React" },
+            { img: CssIcon, alt: "CSS" },
+            { img: MongoIcon, alt: "Mongo" },
+          ]}
           imageKey="disc"
         ></CardComponent>
         <CardComponent
@@ -309,7 +326,11 @@ function Projects() {
             `A simplified Store web application.
             Among it's functionality these include: product and price filtering, shopping cart, responsive design, product page and a custom built carrousel`
           }
-          tech={[JsIcon, ReactIcon, CssIcon]}
+          tech={[
+            { img: JsIcon, alt: "JavaScript" },
+            { img: ReactIcon, alt: "React" },
+            { img: CssIcon, alt: "CSS" },
+          ]}
           imageKey="store"
         ></CardComponent>
         <CardComponent
@@ -319,7 +340,11 @@ function Projects() {
             `A CSR Web application built javascript, React and CSS. 
           Among it's functionality these include: Location search, dynamic background, responsive design, extended forecast and unit selection`
           }
-          tech={[JsIcon, ReactIcon, CssIcon]}
+          tech={[
+            { img: JsIcon, alt: "JavaScript" },
+            { img: ReactIcon, alt: "React" },
+            { img: CssIcon, alt: "CSS" },
+          ]}
           imageKey="weather"
         ></CardComponent>
         <CardComponent
@@ -328,7 +353,12 @@ function Projects() {
             (projectsText && projectsText[8].description) ||
             `An assorment of other web applications. From a photo-tagging application, IMdb home page mockup, todo-list webapp, resume creator, Apple calculator, pomodoro clock, html-markup to a tic-tae-toe  `
           }
-          tech={[JsIcon, ReactIcon, CssIcon, HtmlIcon]}
+          tech={[
+            { img: JsIcon, alt: "JavaScript" },
+            { img: ReactIcon, alt: "React" },
+            { img: CssIcon, alt: "CSS" },
+            { img: HtmlIcon, alt: "HTML" },
+          ]}
           imageKey="others"
         ></CardComponent>
       </Grid>
