@@ -156,16 +156,17 @@ const CardComponent: React.FC<CardProps> = ({
                 return (
                   <Tooltip
                     key={tooltip + index}
-                    title={tooltip[0].toUpperCase() + tooltip.substring(1)}
+                    title={
+                      tooltip
+                        ? tooltip[0].toUpperCase() + tooltip.substring(1)
+                        : ""
+                    }
                   >
                     <CardMedia
                       sx={{ hover: { cursor: "grab" } }}
                       key={index}
                       component="img"
                       image={img}
-                      style={{
-                        padding: img.match("react") ? "" : "",
-                      }}
                     />
                   </Tooltip>
                 );
