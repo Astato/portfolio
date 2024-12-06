@@ -105,13 +105,17 @@ const Contact: React.FC<ContactProps> = ({ setMessageInProgress }) => {
             "An error has ocurred when trying to send the email, please try again",
           success: "",
         });
+        if (blockDiv) {
+          setMessageInProgress(false);
+          blockDiv.style.display = "none";
+        }
         console.log(error);
       }
     }
   };
 
   return (
-    <Grid item container xs={12} id="contact">
+    <Grid item xs={12} id="contact">
       <ThemeProvider theme={theme}>
         <h1>Contact</h1>
         <form style={{ gap: "1rem" }} onSubmit={(e) => e.preventDefault()}>
