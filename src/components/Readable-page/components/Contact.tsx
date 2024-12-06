@@ -119,15 +119,14 @@ const Contact: React.FC<ContactProps> = ({ setMessageInProgress }) => {
       <ThemeProvider theme={theme}>
         <h1>Contact</h1>
         <form style={{ gap: "1rem" }} onSubmit={(e) => e.preventDefault()}>
-          {messageSent.error ||
-            (messageSent.success && (
-              <Alert
-                sx={{ marginTop: "-2rem" }}
-                severity={messageSent.error ? "error" : "success"}
-              >
-                {messageSent.error || messageSent.success}
-              </Alert>
-            ))}
+          {(messageSent.error || messageSent.success) && (
+            <Alert
+              sx={{ marginTop: "-2rem" }}
+              severity={messageSent.error ? "error" : "success"}
+            >
+              {messageSent.error || messageSent.success}
+            </Alert>
+          )}
           <TextField
             label={selectedLanguage === "EN" ? "Name" : "Nombre"}
             variant="outlined"
