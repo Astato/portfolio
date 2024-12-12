@@ -238,7 +238,7 @@ const Navbar: React.FC<NavbarProps> = ({
           }
         });
       },
-      { threshold: [1], root: null, rootMargin: "300px" }
+      { threshold: [0.5], root: null, rootMargin: "300px" }
     );
 
     if (home && about && projects && contact) {
@@ -270,7 +270,10 @@ const Navbar: React.FC<NavbarProps> = ({
         >
           <ButtonBase
             style={{
-              color: currentInView === "contact" ? "#0d0d0e" : "#bbbbbb",
+              color:
+                currentInView === "contact" && !isSmallScreen
+                  ? "#0d0d0e"
+                  : "#bbbbbb",
             }}
             component="div"
             // "pagination id is being set to all buttons, this is to override the Mui classes by specificity,
@@ -289,7 +292,10 @@ const Navbar: React.FC<NavbarProps> = ({
           <ButtonBase
             component="div"
             style={{
-              color: currentInView === "contact" ? "#0d0d0e" : "#bbbbbb",
+              color:
+                currentInView === "contact" && !isSmallScreen
+                  ? "#0d0d0e"
+                  : "#bbbbbb",
             }}
             ref={aboutButtonRef}
             className="btn"
@@ -304,7 +310,10 @@ const Navbar: React.FC<NavbarProps> = ({
           </ButtonBase>
           <ButtonBase
             style={{
-              color: currentInView === "contact" ? "#0d0d0e" : "#bbbbbb",
+              color:
+                currentInView === "contact" && !isSmallScreen
+                  ? "#0d0d0e"
+                  : "#bbbbbb",
             }}
             component="div"
             className="btn"
@@ -317,7 +326,10 @@ const Navbar: React.FC<NavbarProps> = ({
           </ButtonBase>
           <ButtonBase
             style={{
-              color: currentInView === "contact" ? "#0d0d0e" : "#bbbbbb",
+              color:
+                currentInView === "contact" && !isSmallScreen
+                  ? "#0d0d0e"
+                  : "#bbbbbb",
             }}
             component="div"
             id={toPagination}

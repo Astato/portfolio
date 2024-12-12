@@ -261,18 +261,19 @@ const Wrapper: React.FC<WrapperProps> = ({
   }
 
   useEffect(() => {
+    checkScreenSize();
     window.addEventListener("resize", checkScreenSize);
     return () => {
       window.removeEventListener("resize", checkScreenSize);
     };
-  }, [window.innerWidth]);
-
-  useEffect(() => {
-    window.addEventListener("load", checkScreenSize);
-    return () => {
-      window.removeEventListener("load", checkScreenSize);
-    };
   }, []);
+
+  // useEffect(() => {
+  //   window.addEventListener("load", checkScreenSize);
+  //   return () => {
+  //     window.removeEventListener("load", checkScreenSize);
+  //   };
+  // }, []);
 
   useEffect(() => {
     const rootDiv = document.getElementById("root");
